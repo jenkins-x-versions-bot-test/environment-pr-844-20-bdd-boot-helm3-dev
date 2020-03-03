@@ -1,0 +1,37 @@
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-jdfkg-1[0m stage [32mpr-checks[0m and container [32mstep-credential-initializer-642sn[0m
+{"level":"warn","ts":1583242690.4884799,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583242690.489237,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-jdfkg-1[0m stage [32mpr-checks[0m and container [32mstep-working-dir-initializer-gnm2n[0m
+{"level":"warn","ts":1583242691.4844756,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1583242691.48591,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-jdfkg-1[0m stage [32mpr-checks[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-jdfkg-1[0m stage [32mpr-checks[0m and container [32mstep-git-source-jenkins-x-versions-bot-test-env-jdfkg-ts2vd[0m
+{"level":"warn","ts":1583242697.6212418,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583242698.6384676,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/***************************/environment-pr-844-20-bdd-boot-helm3-dev.git @ master in path /workspace/source"}
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-jdfkg-1[0m stage [32mpr-checks[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:f54f0cfee554b9d638f2cfd398b6bd332894d101,1:2991114f6191718cc8651836c078d52a6d5d55f4
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow 2991114f6191718cc8651836c078d52a6d5d55f4: f54f0cfee554b9d638f2cfd398b6bd332894d101:
+DEBUG: ran git fetch --unshallow origin 2991114f6191718cc8651836c078d52a6d5d55f4: f54f0cfee554b9d638f2cfd398b6bd332894d101: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard f54f0cfee554b9d638f2cfd398b6bd332894d101
+DEBUG: ran git reset --hard f54f0cfee554b9d638f2cfd398b6bd332894d101 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge 2991114f6191718cc8651836c078d52a6d5d55f4
+DEBUG: ran git merge 2991114f6191718cc8651836c078d52a6d5d55f4 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e f54f0cfee554b9d638f2cfd398b6bd332894d101..HEAD
+Merged SHA 2991114f6191718cc8651836c078d52a6d5d55f4 with commit message 'chore(deps): bump https://github.com/***************************/bdd-gh-1583242614.git' into base branch master
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-jdfkg-1[0m stage [32mpr-checks[0m and container [32mstep-create-helmfile[0m
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-jdfkg-1[0m stage [32mpr-checks[0m and container [32mstep-lint-helmfile-system[0m
+in ./helmfile.yaml: error during ../environments.yaml.part.0 parsing: template: stringTemplate:6:9: executing "stringTemplate" at <requiredEnv "JX_SECRETS_YAML">: error calling requiredEnv: required env var `JX_SECRETS_YAML` is not set
+[31m
+Pipeline failed on stage 'pr-checks' : container 'step-lint-helmfile-system'. The execution of the pipeline has stopped.[0m
